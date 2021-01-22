@@ -1,0 +1,14 @@
+---Join the film to the film_actor table.
+SELECT * from film LIMIT 5;
+SELECT * from film_actor LIMIT 5;
+SELECT * from film INNER JOIN film_actor ON film.film_id = film_actor.film_id;
+
+
+--Join the actor table to the film_actor table. 
+SELECT * from actor LIMIT 5 ;
+SELECT * from film_actor LIMIT 5;
+SELECT DISTINCT * from actor INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id;
+SELECT * from actor LEFT OUTER JOIN film_actor ON actor.actor_id = film_actor.actor_id;
+
+---Try to join the actor, film_actor, and film table together (3 joins!)
+SELECT * from actor INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id INNER JOIN film ON film_actor.film_id = film.film_id;
