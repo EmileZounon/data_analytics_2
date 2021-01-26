@@ -1,3 +1,9 @@
+/* Videos table. Create one table to keep track of the videos.
+This table should include a unique ID, the title of the video
+, the length in minutes, and the URL. Populate the table
+with at least three related videos from YouTube or other publicly available resources
+
+*/
 
 CREATE TABLE videos(
 idvideos INTEGER NOT NULL,
@@ -14,6 +20,13 @@ VALUES (1,'Ella Fitzgerald - Christmas Songs', '42 minutes', 'https://www.youtub
 
 SELECT * FROM videos;
 
+/*Create and populate Reviewers table. 
+Create a second table that provides at least two user reviews for each of at least two of the videos.
+These should be imaginary reviews that include columns for the user’s name (“Asher”, “John”, etc.),
+the rating (which could be NULL, or a number between 0 and 5), and a short text review (“Loved it!”).
+There should be a column that links back to the ID column in the table of videos.                                 
+*/
+                                 
 CREATE TABLE reviewers(
 idreviewers INTEGER NOT NULL,
 username VARCHAR(250) NOT NULL,
@@ -30,6 +43,7 @@ VALUES(01,1,'joana',5,'Love the christmas song'),
 
 SELECT * from reviewers;
 
+--Report on Video Reviews. Write a JOIN statement that shows information from both tables.                                                                                
 
 SELECT * FROM videos
 INNER JOIN reviewers ON videos.idvideos = reviewers.idvideos;
